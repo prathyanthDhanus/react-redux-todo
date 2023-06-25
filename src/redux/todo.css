@@ -1,36 +1,64 @@
 .mainDiv {
-    background-color: rgb(18, 22, 21);
-    height: 5em;
-    display: flex;
+  background-color: rgb(18, 22, 21);
+  height: 5em;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5em;
-   border-radius: 10px;
-   
-  }
+  border-radius: 10px;
+}
 
-  .mainDiv input{
-    width: 40rem;
-    border-radius: 7px;
-    padding: 10px;
-    font-size: large;
-    font-weight: bold;
-   
-  }
-  .mainDiv button{
-      margin-left: 15px;
-  }
-  
-  
+/*----------input field----------------*/
+.mainDiv input {
+  width: 40rem;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+}
 
+/*----------input field add button---------*/
+.mainDiv button {
+  margin-left: 15px;
 
+}
 
+/*----------delete and edit button cell --------*/
+.button-cell {
+  width: 1%;
+  white-space: nowrap;
+}
 
+/*----------delete and edit button----------------*/
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
 
+/*-----------edit component maindiv-------------*/
+.editDiv {
+  background-color: rgb(18, 22, 21);
+  height: 5em;
+  width: 60vw;
+  margin-left: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+  border-radius: 10px;
+}
 
+/*-------------edit component input field----------*/
+.editDiv input {
+  width: 40rem;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+}
 
-
-
-
-
-
+/*-------------edit component input button----------*/
+.editDiv button{
+  margin-left: 15px;
+}
