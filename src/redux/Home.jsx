@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import { add, remove } from "./Tododata";
 import { useNavigate } from "react-router-dom";
+import "./todo.css"
+
+
 
 function Home() {
     const { data } = useSelector(state => state.todo);
@@ -21,50 +24,53 @@ function Home() {
     };
 
     const handleDelete = (id) => {
-        dispatch(remove({ id: id }));
+        const confirmDelete = window.confirm("Are you sure you want to delete this item");
+        if (confirmDelete) {
+
+            dispatch(remove({ id: id }));
+        }
     };
 
     return (
-        <>
-            <div>
-                <input
-                    placeholder="Type here"
-                    style={{ color: "white" }}
-                    type="text"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                />
-                <Button onClick={handleAdd}>Add</Button>
-            </div>
+        
+            <Container >
+                <div  className="mainDiv">
+                    <input
+                        placeholder="Type here"
+                        type="text"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                    />
+                    <Button onClick={handleAdd} variant="success">Add</Button>
+                </div>
 
-            <Container>
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>S.no</th>
-                            <th>Tasks</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((e, index) => {
-                            return (
-                                <tr key={e.id}>
-                                    <td>{index + 1}</td>
-                                    <td>{e.name}</td>
-                                    <td onClick={() => handleDelete(e.id)}>
-                                        <Button>Delete</Button>
-                                    </td>
-                                    <td onClick={() => navigate(`edit/${e.id}`)}>
-                                        <Button>Edit</Button>
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </Table>
+                <Container>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>S.no</th>
+                                <th>Tasks</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((e, index) => {
+                                return (
+                                    <tr key={e.id}>
+                                        <td>{index + 1}</td>
+                                        <td>{e.name}</td>
+                                        <td>
+                                            <Button onClick={() => handleDelete(e.id)} variant="danger">Delete</Button>
+                                            <Button onClick={() => navigate(`edit/${e.id}`)}>Edit</Button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </Table>
+                </Container>
             </Container>
-        </>
+        
     );
 }
 

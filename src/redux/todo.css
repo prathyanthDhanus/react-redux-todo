@@ -1,0 +1,36 @@
+.mainDiv {
+    background-color: rgb(18, 22, 21);
+    height: 5em;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+   border-radius: 10px;
+   
+  }
+
+  .mainDiv input{
+    width: 40rem;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+   
+  }
+  .mainDiv button{
+      margin-left: 15px;
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
