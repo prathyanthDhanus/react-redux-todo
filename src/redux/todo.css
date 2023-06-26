@@ -1,10 +1,9 @@
 .mainDiv {
-  background-color: rgb(18, 22, 21);
+  background-color: rgb(94, 176, 234);
   height: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5em;
   border-radius: 10px;
 }
 
@@ -61,4 +60,10 @@
 /*-------------edit component input button----------*/
 .editDiv button{
   margin-left: 15px;
+}
+/*---------------h1 tag-------------------*/
+.heading{
+  margin-left: 13em;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 10px  ;
 }

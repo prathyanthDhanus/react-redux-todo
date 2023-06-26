@@ -21,7 +21,7 @@ const Edit = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
+  
   const handleSave = () => {
     const inputData = inputRef.current.value;
     if (inputData == "") {
@@ -29,14 +29,14 @@ const Edit = () => {
     }
     dispatch(edit({ id: id, name: inputData }));
     window.alert("content updated successfully")
-    navigate("/")                                    //navigate to home page
+    navigate("/")                                   
   }
 
   return (
     <div className="editDiv">
       {filterData.map((e) => {
         return (
-          <input key={e.id} type='text' ref={inputRef} defaultValue={e.name} placeholder='edit now!' />
+          <input key={e.id} type='text' ref={inputRef} defaultValue={e.name} placeholder='type something!' />
         )
 
       })}

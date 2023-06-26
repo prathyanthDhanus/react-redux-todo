@@ -25,15 +25,17 @@ function Home() {
     };
 
     const handleDelete = (id) => {
-        const confirmDelete = window.confirm("Are you sure you want to delete this item");
+        const confirmDelete = window.confirm("Are you sure you want to delete this task");
         if (confirmDelete) {
             dispatch(remove({ id: id }));
         }
     };
-
+    
     return (
 
         <Container >
+
+        <h1 className="heading">TODO LIST</h1>
             <div className="mainDiv">
                 <input
                     placeholder="Type here!"
@@ -47,7 +49,7 @@ function Home() {
             <Container>
                 <Table striped bordered hover>
                     <thead>
-                        <tr>
+                        <tr style={{fontSize:25}}>
                             <th>S.no</th>
                             <th>Tasks</th>
                             <th></th>
@@ -56,9 +58,10 @@ function Home() {
                     <tbody>
                         {data.map((e, index) => {
                             return (
+
                                 <tr key={e.id}>
-                                    <td>{index + 1}</td>
-                                    <td>{e.name}</td>
+                                    <td style={{ fontWeight: 'bold' }}>{index + 1}</td>
+                                    <td style={{ fontWeight: 'bold' }}>{e.name}</td>
                                     <td className="button-cell">
                                     <div className="button-group">
                                         <Button onClick={() => handleDelete(e.id)} variant="danger">Delete</Button>

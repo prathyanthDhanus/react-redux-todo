@@ -5,8 +5,8 @@ const initialState ={
     data:[]
 }    
 
-export const userSlice = createSlice({
-    name:'use',
+export const todoSlice = createSlice({
+    name:'todo',
     initialState,
     reducers:{
         //----------adding actions (Create)-----------
@@ -42,6 +42,6 @@ export const userSlice = createSlice({
 
 
 
-export const {add,remove,edit} = userSlice.actions
+export const {add,remove,edit} = todoSlice.actions
 
-export default userSlice.reducer
+export default todoSlice.reducer
